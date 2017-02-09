@@ -67,7 +67,6 @@ public class FtcOpModeRegister implements OpModeRegister {
          * Register OpModes implemented in the Blocks visual programming language.
          */
         BlocksOpMode.registerAll(manager);
-
         /**
          * Register OpModes that use the annotation-based registration mechanism.
          */

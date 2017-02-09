@@ -22,12 +22,12 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 
 @Autonomous(name = "TestAuto",group = "testauto")
 public class TestAuto extends LinearOpMode {
-            DcMotor motor1 = null;
-            TouchSensor ts = null;
+//            DcMotor motor1 = null;
+ //           TouchSensor ts = null;
  //           OpticalDistanceSensor ods;
             public void runOpMode() throws InterruptedException{
-                motor1 = hardwareMap.dcMotor.get("motor1");
-                ts = hardwareMap.touchSensor.get("ts");
+  //              motor1 = hardwareMap.dcMotor.get("motor1");
+  //              ts = hardwareMap.touchSensor.get("ts");
                 //ods = hardwareMap.opticalDistanceSensor.get("ods");
 
                 VuforiaLocalizer.Parameters params = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
@@ -41,8 +41,8 @@ public class TestAuto extends LinearOpMode {
                 VuforiaTrackables beacons = vuforia.loadTrackablesFromAsset("FTC_2016-17");
                 beacons.get(0).setName("Wheels");
                 beacons.get(1).setName("Tools");
-                beacons.get(0).setName("Lego");
-                beacons.get(0).setName("Gears");
+                beacons.get(2).setName("Legos");
+                beacons.get(3).setName("Gears");
 
                 waitForStart();
 
