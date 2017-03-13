@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.IrSeekerSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
@@ -32,17 +33,9 @@ public class TestAuto extends LinearOpMode {
  //           TouchSensor ts = null;
  //           OpticalDistanceSensor ods;
             public void runOpMode() throws InterruptedException{
-                motor3 = hardwareMap.dcMotor.get("motor3");
-                motor4 = hardwareMap.dcMotor.get("motor4");
-                servo1 = hardwareMap.servo.get("servo1");
 
-                motor3.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-                motor4.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-  //              motor1 = hardwareMap.dcMotor.get("motor1");
-  //              ts = hardwareMap.touchSensor.get("ts");
-  //              ods = hardwareMap.opticalDistanceSensor.get("ods");
 
-   /*             VuforiaLocalizer.Parameters params = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
+                VuforiaLocalizer.Parameters params = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
                 params.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
                 params.vuforiaLicenseKey = "ATr0z1r/////AAAAGVfpauzOAUu8nGPNi2hK7VMYgbUXT2kDrI/0SvTjUOIQ7bf53yh3ZZqZiB25kIEEQZK6usWSpFTYBvVzCLPc4zfYWN1NOv0ZIF0fT9yI8u1K/AAzf0ISyYlaEriQ9G948QH51WGaTtB/z2dbLvnustTEy60KR4G65s0PPMgY7f13ElsBvcuompfcUh/byEyyPqvTtTUWt81cYd7/S/X88Bp2TZJh+bgTi+jG9ecRIkpsQ+OHmHiSQum9gu6/DX1IQJmhdoI22goZi58uchtVSSD9mqXYBGysbaMjAJjWz68bDZTyloZVw/jyzV0ARj4y+HZC3XTXFU76vqNf12yM0DKhTnDmTk0OGXqBpH7CpmWD";
                 params.cameraMonitorFeedback = VuforiaLocalizer.Parameters.CameraMonitorFeedback.AXES;
@@ -56,7 +49,7 @@ public class TestAuto extends LinearOpMode {
                 beacons.get(2).setName("Legos");
                 beacons.get(3).setName("Gears");
 
-                beacons.activate();     */
+                beacons.activate();
                 waitForStart();
                 status_servo = servo1.getPosition();
                 motor3.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -76,7 +69,7 @@ public class TestAuto extends LinearOpMode {
                     motor4.setPower(0);
                     servo1.setPosition(0.73);
                     t=1;
-                 /*   for(VuforiaTrackable beac : beacons){
+                    for(VuforiaTrackable beac : beacons){
                         OpenGLMatrix pose = ( (VuforiaTrackableDefaultListener) beac.getListener() ).getPose();
 
                         if(pose != null){
@@ -90,7 +83,7 @@ public class TestAuto extends LinearOpMode {
 
                         }
                     }
-                    telemetry.update();     */
+                    telemetry.update();
 
                 }
             }
